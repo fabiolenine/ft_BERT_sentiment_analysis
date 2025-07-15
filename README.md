@@ -14,21 +14,6 @@ Este projeto implementa um pipeline completo de fine-tuning do modelo BERT para 
 - ✅ **Versionamento de Modelos**: Sistema automático de comparação e promoção
 - ✅ **Estrutura de Produção**: Diretórios organizados para experimentos e produção
 
-## 📊 Resultados do Demo
-
-**Configuração do Demo:**
-- Amostras: 1,000
-- Max Length: 128 tokens
-- Batch Size: 8
-- Epochs: 1
-- Learning Rate: 2e-05
-
-**Métricas Alcançadas:**
-- 🎯 **Acurácia**: 85.5%
-- 🎯 **Precisão**: 85.7%
-- 🎯 **Recall**: 85.5%
-- 🎯 **F1-Score**: 85.0%
-- 🎯 **AUC-ROC**: 88.8%
 
 ## 🏗️ Estrutura do Projeto
 
@@ -36,23 +21,24 @@ Este projeto implementa um pipeline completo de fine-tuning do modelo BERT para 
 ft_BERT_sentiment_analysis/
 ├── src/
 │   └── bert_sentiment_trainer.py   # Pipeline principal
+├── notebooks
+|   └── BERT_sentiment_trainer.ipynb # Notebook Jupyter: analise, descobertas e treinamento 
 ├── models/
 │   ├── experiments/                # Modelos experimentais
-│   │   └── demo_quick/            # Demo executado
+│   │   └── demo_quick/             # Demo executado
 │   │       ├── pytorch_model.bin
 │   │       ├── config.json
 │   │       ├── metadata.json
 │   │       └── training_history.png
-│   └── production/                 # Modelos em produção
-├── data/                          # Dados processados
-├── logs/                          # Logs de treinamento
-├── notebooks/                     # Jupyter notebooks
-├── demo_quick.py                  # Demo rápido
-├── requirements.txt               # Dependências
-└── README.md                      # Documentação
+│   └── production/                 # Modelos para produção
+├── logs/                           # Logs de treinamento
+├── tests/                          # código para teste da API
+├── api_requirements.txt            # Dependências do código api.py
+├── requirements.txt                # Dependências do código /src/bert_sentiment_trainer.py
+└── README.md                       # Documentação
 ```
 
-## 🚀 Como Usar
+## 🚀 Como Usar executar o fine-tuning do BERT para analise de setimentos
 
 ### 1. Instalação
 
@@ -60,13 +46,7 @@ ft_BERT_sentiment_analysis/
 pip install -r requirements.txt
 ```
 
-### 2. Demo Rápido
-
-```bash
-python demo_quick.py
-```
-
-### 3. Treinamento Completo
+### 2. Treinamento Completo
 
 ```bash
 python src/bert_sentiment_trainer.py
@@ -77,9 +57,9 @@ python src/bert_sentiment_trainer.py
 ### Hiperparâmetros Principais
 
 ```python
-MAX_LENGTH = 128        # ou 512 para sequências mais longas
-BATCH_SIZE = 32         # Ajustar conforme GPU disponível
-EPOCHS = 3              # Número de épocas
+MAX_LENGTH = 512        # ou 512 para sequências mais longas
+BATCH_SIZE = 16         # Ajustar conforme GPU disponível
+EPOCHS = 1              # Número de épocas
 LEARNING_RATE = 2e-5    # Taxa de aprendizado
 ```
 
@@ -292,9 +272,10 @@ Para expandir o projeto:
 1. **Hyperparameter Tuning**: Usar Optuna ou similar
 2. **Cross-Validation**: Implementar validação cruzada
 3. **Ensemble Models**: Combinar múltiplos modelos
-4. ✅ **API de Produção**: FastAPI para servir o modelo (implementado)
-5. **Monitoramento**: MLflow ou Weights & Biases
-6. **CI/CD**: Pipeline automatizado
+4. **Monitoramento**: MLflow ou Weights & Biases
+5. **CI/CD**: Pipeline automatizado
+6. **Versionamento**: Melhorar o versionamento dos modelos utilizando os serviços de nuvem cloud
+7. **Balancemanto**: Disponibilizar o serviçco de API com balancemaneto e escalonamento automático 
 
 ## 📋 Requisitos
 
