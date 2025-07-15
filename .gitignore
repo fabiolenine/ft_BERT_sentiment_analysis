@@ -179,10 +179,7 @@ Desktop.ini
 *.bin
 *.safetensors
 # Keep only production models
-!models/production/**/*.pth
-!models/production/**/*.pt
-!models/production/**/*.bin
-!models/production/**/*.safetensors
+models/
 
 # Hugging Face cache
 ~/.cache/huggingface/
