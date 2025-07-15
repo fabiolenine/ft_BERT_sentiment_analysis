@@ -115,10 +115,9 @@ dmypy.json
 
 # Machine Learning specific
 # Models (keep only production models if needed)
+models/
 models/experiments/
 models/checkpoints/
-# Uncomment the next line if you want to ignore all model files
-# models/
 
 # Datasets (if large)
 data/raw/
