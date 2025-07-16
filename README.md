@@ -206,6 +206,16 @@ python api.py
 
 A API estará disponível em `http://localhost:8000` com documentação Swagger em `/docs`.
 
+### 📄 Documentação da API
+
+A documentação interativa da API está disponível em:
+- **Swagger UI**: `http://localhost:8000/docs`
+
+Estas interfaces permitem testar os endpoints diretamente no navegador e explorar a especificação OpenAPI completa.
+
+![Documentação da API - Wragger UI](imgs/api_wragger_ui.png)
+
+
 ### 📊 Sistema de Logging Profissional
 
 A API inclui um sistema de logging completo e estruturado:
