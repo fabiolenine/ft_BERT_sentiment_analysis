@@ -254,7 +254,8 @@ class BERTSentimentTrainer:
         total_steps = len(train_loader) * epochs
         scheduler = get_linear_schedule_with_warmup(
             optimizer,
-            num_warmup_steps=0,
+            # O número de etapas para a fase de aquecimento.
+            num_warmup_steps=0,     # Para tarefas menores ou modelos já ajustados, num_warmup_steps=0 pode funcionar bem.
             num_training_steps=total_steps
         )
         
